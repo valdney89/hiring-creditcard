@@ -1,0 +1,53 @@
+<div class="contratacao-cartao-form p-5 h-100">
+    <div class="d-flex align-items-center h-100">
+        <form
+            *ngIf="isShowForm"
+            [formGroup]="hiringForm"
+            class="w-100"
+        >
+            <app-control-name
+                [formGroup]="hiringForm"
+                [controlStep]="steps[0].numStep"
+            ></app-control-name>
+
+            <app-control-email
+                [formGroup]="hiringForm"
+                [controlStep]="steps[1].numStep"
+            ></app-control-email>
+
+            <h4 *ngIf="isFinalStep()" testeDirective>
+                Parabéns, só falta um passo para pedir seu cartão.
+            </h4>
+
+            <div id="form-buttons" class="mt-5 d-flex justify-content-between align-items-center">
+                <button
+                    type="button"
+                    class="btn btn-outline-secondary btn-lg"
+                    (click)="returnToLastControl()"
+                    [disabled]="activeStep === steps[0].numStep ? true : false"
+                >VOLTAR</button>
+
+                <button
+                    *ngIf="!isFinalStep(); else showFinalButton"
+                    type="button"
+                    class="btn btn-primary btn-lg"
+                    [disabled]="isButtonContinueDisabled()"
+                    (click)="continueToNextControl()"
+                >CONTINUAR</button>
+
+                <ng-template #showFinalButton>
+                    <button
+                    type="button"
+                    class="btn btn-primary btn-lg"
+                    (click)="sendHiring()"
+                >SOLICITAR CARTÃO</button>
+                </ng-template>
+            </div>
+        </form>
+
+        <app-thank-you
+            *ngIf="isShowThankYou"
+            [hiring]="hiringConcluded"
+        ></app-thank-you>
+    </div>
+</div>

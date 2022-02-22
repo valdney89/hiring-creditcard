@@ -1,0 +1,31 @@
+<div [formGroup]="formGroup">
+    <label
+        for="{{ controlName }}"
+        class="form-label"
+    >
+        {{ label }}
+    </label>
+    <input
+        [formControlName]="controlName"
+        [name]="controlName"
+        type="email"
+        class="form-control"
+        [id]="controlName"
+        [placeholder]="placeholder"
+        [attr.aria-label]="helpText"
+    >
+    <small
+        class="text-danger"
+        *ngIf="formGroup.get('name')?.errors?.['required'] &&
+            formGroup.get('name')?.touched"
+    >
+        Campo Obrigatório
+    </small>
+    <small
+        class="text-danger"
+        *ngIf="formGroup.get('name')?.errors?.['email'] &&
+            formGroup.get('name')?.touched"
+    >
+        E-mail Inválido
+    </small>
+</div>

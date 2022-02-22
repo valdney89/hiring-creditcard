@@ -1,0 +1,63 @@
+{
+  "produtos": [
+    {
+      "id": 1,
+      "nome": "Básico",
+      "rendaMinima": 1100,
+      "mensalidade": 0,
+      "bandeira": "Visa"
+    },
+    {
+      "id": 2,
+      "nome": "Platinum",
+      "rendaMinima": 5000,
+      "mensalidade": 25,
+      "bandeira": "Mastercard"
+    },
+    {
+      "id": 3,
+      "nome": "Black",
+      "rendaMinima": 10000,
+      "mensalidade": 50,
+      "bandeira": "Mastercard"
+    }
+  ],
+  "contratacoes": [
+    {
+      "id": 1,
+      "name": "Valdney de Souza Nogueira Filho",
+      "email": "valdneysouza@gmail.com",
+      "cpf": "01503581136",
+      "sexo": "M",
+      "dataNascimento": "1989-07-06T00:00.000Z",
+      "nomeMae": "Elma Sombra",
+      "celular": "61984190776",
+      "renda": 15000,
+      "diaVencimento": 15,
+      "endereco": {
+        "cep": 72300533,
+        "rua": "quadra 301",
+        "bairro": null,
+        "numero": null,
+        "cidade": "Brasília",
+        "uf": "DF"
+      },
+      "cartaoEscolhido": {
+        "nome": "Black",
+        "rendaMinima": 10000,
+        "mensalidade": 50,
+        "bandeira": "Mastercard"
+      }
+    },
+    {
+      "name": "Valdney De Souza Nogueira Filho",
+      "email": "valdneysouza@gmail.com",
+      "id": 2
+    },
+    {
+      "name": "Valdney Nogueira",
+      "email": "teste2@gmail.com",
+      "id": 3
+    }
+  ]
+}

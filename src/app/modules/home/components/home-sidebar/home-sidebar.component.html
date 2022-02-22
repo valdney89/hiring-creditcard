@@ -1,0 +1,43 @@
+<div class="contratacao-cartao-sidebar p-5 h-100">
+    <div
+        class="d-flex flex-column justify-content-evenly align-items-center h-100"
+    >
+        <div>
+            <h2 tabindex="0">
+                Complete o formulário ao lado para pedir seu Cartão de Crédito
+            </h2>
+            <div class="mt-5" *ngIf="product">
+                <h5 class="mb-3" tabindex="0">Produto Selecionado:</h5>
+                <p tabindex="0">
+                    <strong>{{ product?.nome }}</strong>
+                    ({{ product?.bandeira }})
+                </p>
+                <p tabindex="0">
+                    <strong>Renda Mínima:</strong>
+                    {{ product?.rendaMinima | currency }}
+                </p>
+                <p
+                    tabindex="0"
+                    *ngIf="product.mensalidade > 0;
+                        else semMensalidade"
+                >
+                    <strong>Mensalidade:</strong> 12x
+                    {{ product.mensalidade | currency }}
+                </p>
+                <ng-template #semMensalidade>
+                    <p tabindex="0">
+                        <strong>Mensalidade:</strong> Isento
+                    </p>
+                </ng-template>
+            </div>
+        </div>
+
+        <picture tabindex="0">
+            <img
+                class="contratacao-cartao-sidebar__img"
+                src="../../../../../assets/images/cards-cut.png"
+                alt="Ilustração dos cartões do Banco Pan nas cores Preto e Azul"
+            />
+        </picture>
+    </div>
+</div>
